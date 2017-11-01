@@ -1,0 +1,15 @@
+version: '{build}'
+image: Visual Studio 2017
+configuration: Release
+
+before_build:
+  - nuget restore
+build:
+  verbosity: minimal
+  project: TabbedView.sln
+
+nuget:
+  disable_publish_on_pr: true
+artifacts:
+- path: TabbedView\bin\$(CONFIGURATION)\
+- path: TabbedView\bin\$(CONFIGURATION)\*.nupkg

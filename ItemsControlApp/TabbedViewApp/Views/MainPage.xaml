@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.TabbedView"
+             xmlns:local="clr-namespace:TabbedViewApp"
+             x:Class="TabbedViewApp.MainPage"
+             Title="Tabs"
+             BindingContext="{StaticResource ViewModel}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ViewModel x:Key="ViewModel" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <Label Text="Welcome to Xamarin.Forms!" />
+
+        <extended:TabbedView x:Name="tabbedView" VerticalOptions="FillAndExpand">
+            <extended:Tab Title="Page 1">
+                <Grid BackgroundColor="Pink">
+                    <Button Text="Page 1" BackgroundColor="Orange" VerticalOptions="Center" HorizontalOptions="Center" />
+                </Grid>
+            </extended:Tab>
+            <extended:Tab Title="Page 2">
+                <Label Text="Page 2" BackgroundColor="Green" />
+            </extended:Tab>
+            <extended:Tab Title="Page 3">
+                <Label Text="Page 3" BackgroundColor="Blue" VerticalOptions="Center" HorizontalOptions="Center" />
+            </extended:Tab>
+        </extended:TabbedView>
+
+        <Label Text="Welcome to Xamarin.Forms!" />
+
+    </StackLayout>
+
+</ContentPage>
